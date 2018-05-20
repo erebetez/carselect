@@ -1,6 +1,7 @@
 [
    
    {
+     "id": 0,
      "title": "VW Caddy 1.4 TSI Highline",
      "price": "21550",
      "km": "24500",
@@ -9,6 +10,7 @@
      "url": ["https://www.autoscout24.ch/de/d/vw-caddy-kompaktvan--minivan-2016-occasion?allmakes=1&fuel=14&index=5&loc=3000+bern&make=82&model=843&rad=40&st=2&vehid=5440204&vehtyp=10&returnurl=%2fde%2fautos%2f-vw--caddy%3fallmakes%3d1%26fuel%3d14%26loc%3d3000+bern%26make%3d82%26model%3d843%26rad%3d40%26st%3d2%26vehtyp%3d10%26r%3d5"]
    },
    {
+     "id": 1,
      "title": "VW Caddy 1.4 TSI Trendline DSG",
      "price": "30500",
      "km": "3000",
@@ -18,6 +20,7 @@
             "https://www.autoscout24.ch/de/d/vw-caddy-kompaktvan--minivan-2018-vorfuehrmodell?allmakes=1&fuel=14&index=6&loc=3000+bern&make=82&model=843&rad=40&st=2&vehid=5560476&vehtyp=10&returnurl=%2fde%2fautos%2f-vw--caddy%3fallmakes%3d1%26fuel%3d14%26loc%3d3000+bern%26make%3d82%26model%3d843%26rad%3d40%26st%3d2%26vehtyp%3d10%26r%3d5"]
    },
    {
+     "id": 2,
      "title": "VW Caddy 1.6 TDI CR Comfortline DSG",
      "price": "12900",
      "km": "109000",
@@ -26,6 +29,7 @@
      "url": ["https://www.autoscout24.ch/de/d/vw-caddy-kombi-2012-occasion?allmakes=1&index=0&loc=3000+bern&make=82&model=843&pricefrom=4000&priceto=25000&rad=40&st=2&vehid=5400733&vehtyp=10&returnurl=%2fde%2fautos%2f-vw--caddy%3fallmakes%3d1%26loc%3d3000+bern%26make%3d82%26model%3d843%26pricefrom%3d4000%26priceto%3d25000%26rad%3d40%26st%3d2%26vehtyp%3d10%26r%3d5"]
    },
    {
+     "id": 3,
      "title": "VW Caddy 1.6 TDI BMT Comfortline DSG",
      "price": "17800",
      "km": "33000",
@@ -34,6 +38,7 @@
      "url": ["https://www.autoscout24.ch/de/d/vw-caddy-kombi-2015-occasion?allmakes=1&index=7&loc=3000+bern&make=82&model=843&pricefrom=4000&priceto=25000&rad=40&st=2&vehid=5722629&vehtyp=10&returnurl=%2fde%2fautos%2f-vw--caddy%3fallmakes%3d1%26loc%3d3000+bern%26make%3d82%26model%3d843%26pricefrom%3d4000%26priceto%3d25000%26rad%3d40%26st%3d2%26vehtyp%3d10%26r%3d5"]
    },
    {
+     "id": 4,
      "title": "VW Caddy 2.0 TDI Trendline",
      "price": "16900",
      "km": "99909",

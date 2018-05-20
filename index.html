@@ -13,9 +13,11 @@
 <div id="app">
   <p>{{ message }}</p>
   <ol>
-    <li v-for="car in cars">
-      {{ car.title }}
-    </li>
+    <car-item
+      v-for="car in cars"
+      v-bind:car="car"
+      v-bind:key="car.id">
+    </car-item>
   </ol>
 </div>
 <p id="retr"></p>
@@ -38,10 +40,26 @@ var app = new Vue({
         this.cars = response
         this.message = "Loaded!"
       }
-    }
+  },
+  created: function () { this.fetch_cars() }
 })
 
-app.fetch_cars()
+
+Vue.component('car-item', {
+  props: ['car'],
+  template: '<li>{{ car.title }}</li>'
+//     <div>
+//      <h2>{{ car.title }}</h2>
+//      <dl>
+//       <dt>km</dt>
+//       <dd>{{ car.km }}</dd>
+//       <dt>price</dt>
+//       <dd>{{ car.price }}</dd>
+//      <dl>
+//     </div>
+//     </li>'
+})
+
 </script>
 
 </body>
