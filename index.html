@@ -8,17 +8,15 @@
 </head>
 <body>
 
-<h1>Autos</h1>
-
-<div id="app">
-  <p>{{ message }}</p>
-  <ol>
+<div id="app" class="container">
+  <h1>Autos</h1>
+  <ul class="list-unstyled">
     <car-item
       v-for="car in cars"
       v-bind:car="car"
       v-bind:key="car.id">
     </car-item>
-  </ol>
+  </ul>
 </div>
 <p id="retr"></p>
 
@@ -47,18 +45,32 @@ var app = new Vue({
 
 Vue.component('car-item', {
   props: ['car'],
-  template: '<li>{{ car.title }}</li>'
-//     <div>
-//      <h2>{{ car.title }}</h2>
-//      <dl>
-//       <dt>km</dt>
-//       <dd>{{ car.km }}</dd>
-//       <dt>price</dt>
-//       <dd>{{ car.price }}</dd>
-//      <dl>
-//     </div>
-//     </li>'
+  template:
+  `
+    <li>
+    <div class="border-left border-primary bg-light p-2 m-3">
+     <h2 class="text-primary">{{ car.title }}</h2>
+     <div class="row">
+      <div class="col-sm">
+        <dl>
+        <dt>km</dt>
+        <dd>{{ car.km }}</dd>
+        <dt>year</dt>
+        <dd>{{ car.year }}</dd>
+        <dt>price</dt>
+        <dd>{{ car.price }}</dd>
+        </dl>
+        <a v-bind:href="car.url" target="_blank">link</a>
+       </div>
+       <div class="col-sm">
+        <img v-bind:src="car.img" alt="a car"></img>
+       </div>
+     </div>
+    </div>
+    </li>
+  `
 })
+
 
 </script>
 
