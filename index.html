@@ -22,8 +22,6 @@
 
 
 <script>
-// var myImage = document.querySelector('#retr');
-
 var myRequest = new Request('auto.json');
 
 var app = new Vue({
@@ -33,19 +31,14 @@ var app = new Vue({
     cars: []
   },
   methods: {
-    fetch_cars: function () {
+    fetch_cars: async function () {
         this.message = "Loading..."
-        fetch(myRequest).then(function(response) {
-            return response.json();
-            }).then(function(response) {
-//                 myImage.innerHTML = response[0]['title'];
-//                 console.log(response);
-            this.cars = response;
-            this.message = "Loaded!"
-            console.log(this.cars)
-            });
+        response = await fetch(myRequest)
+        response = await response.json();
+        this.cars = response
+        this.message = "Loaded!"
+      }
     }
-  }
 })
 
 app.fetch_cars()
