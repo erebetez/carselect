@@ -5,8 +5,11 @@ Vue.component('car-item', {
   template:
   `
     <car-card>
-     <primary-title v-bind:text="car.title"></primary-title>
-     <div class="row">
+     <div class="card-header">
+       <primary-title v-bind:text="car.title"></primary-title>
+     </div>
+     <div class="card-body bg-light">
+      <div class="row">
       <div class="col-sm">
        <dl>
         <dt>km</dt>
@@ -17,9 +20,10 @@ Vue.component('car-item', {
         <dd>{{ car.price }}</dd>
        </dl>
        <a v-bind:href="car.url" target="_blank">link</a>
-      </div>
-      <div class="col-sm">
+       </div>
+       <div class="col-sm">
        <img v-bind:src="car.img" alt="a car"></img>
+       </div>
       </div>
      </div>
     </car-card>
@@ -29,7 +33,7 @@ Vue.component('car-item', {
 Vue.component('car-card', {
   template: `
    <li>
-    <div class="border-left border-primary bg-light p-2 m-3">
+    <div class="card mt-3">
       <slot></slot>
     </div>
    </li>
