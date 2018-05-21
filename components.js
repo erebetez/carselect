@@ -44,23 +44,37 @@ Vue.component('primary-title', {
 
 Vue.component('cars-table', {
   props: ['cars'],
+  methods: {
+      order_by: function(key) {
+        console.log("oder! " + key);
+        function compare(a,b) {
+            if (a[key] < b[key])
+                return -1;
+            if (a[key] > b[key])
+                return 1;
+            return 0;
+            }
+
+        this.cars.sort(compare);
+    }
+  },
   template:
   `
   <table class="table table-striped table-hover">
-         <thead>
-          <tr>
-            <th>Title</th>
-            <th>km</th>
-            <th>year</th>
-            <th>price</th>
+        <thead>
          <tr>
+            <th v-on:click="order_by('title')">Title</th>
+            <th v-on:click="order_by('km')">km</th>
+            <th v-on:click="order_by('year')">year</th>
+            <th v-on:click="order_by('price')">price</th>
+         </tr>
         </thead>
         <tbody>
-        <car-row
+         <car-row
             v-for="car in cars"
             v-bind:car="car"
             v-bind:key="car.id">
-        </car-row>
+         </car-row>
         </tbody>
   </table>
   `
