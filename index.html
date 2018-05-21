@@ -42,7 +42,7 @@ var app = new Vue({
         var myRequest = new Request('auto.json');
         response = await fetch(myRequest)
         response = await response.json();
-        this.cars = response
+        this.cars = response;
         }
   },
   created: function () { this.fetch_cars() }

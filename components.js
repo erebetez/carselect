@@ -41,21 +41,34 @@ Vue.component('primary-title', {
   template: '<h2 class="text-primary">{{ text }}</h2>'
 })
 
-
 Vue.component('cars-table', {
   props: ['cars'],
+  data: function () {
+    return {
+        ordered: false,
+        asc: false
+    }
+  },
   methods: {
       order_by: function(key) {
-        console.log("oder! " + key);
+        var asc = this.asc
         function compare(a,b) {
             if (a[key] < b[key])
-                return -1;
+                return asc ? 1 : -1;
             if (a[key] > b[key])
-                return 1;
-            return 0;
-            }
-
+                return asc ? -1 : 1;
+            return 0;}
+        this.ordered = key;
+        this.asc = !this.asc;
         this.cars.sort(compare);
+    },
+    seen: function(key) {
+        return key == this.ordered
+    }
+  },
+  computed: {
+    icon: function() {
+        return this.asc ? "fas fa-angle-down" : "fas fa-angle-up"
     }
   },
   template:
@@ -63,10 +76,10 @@ Vue.component('cars-table', {
   <table class="table table-striped table-hover">
         <thead>
          <tr>
-            <th v-on:click="order_by('title')">Title</th>
-            <th v-on:click="order_by('km')">km</th>
-            <th v-on:click="order_by('year')">year</th>
-            <th v-on:click="order_by('price')">price</th>
+            <th v-on:click="order_by('title')"><i v-if="seen('title')" v-bind:class="icon"></i>Title</th>
+            <th v-on:click="order_by('km')"><i v-if="seen('km')" v-bind:class="icon"></i>km</th>
+            <th v-on:click="order_by('year')"><i v-if="seen('year')" v-bind:class="icon"></i>year</th>
+            <th v-on:click="order_by('price')"><i v-if="seen('price')" v-bind:class="icon"></i>price</th>
          </tr>
         </thead>
         <tbody>
@@ -79,6 +92,13 @@ Vue.component('cars-table', {
   </table>
   `
 })
+
+// Vue.component('column-caption',{
+//     props: ['key']
+//     template:
+//        '<th v-on:click="order_by('title')"><i v-if="seen('title')" v-bind:class="icon"></i>Title</th>'
+//     }
+// )
 
 Vue.component('car-row', {
     props: ['car'],
