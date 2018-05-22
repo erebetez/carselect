@@ -50,7 +50,8 @@ Vue.component('cars-table', {
   data: function () {
     return {
         ordered: false,
-        asc: false
+        asc: false,
+        active_id: false
     }
   },
   methods: {
@@ -65,10 +66,24 @@ Vue.component('cars-table', {
         this.ordered = key;
         this.asc = !this.asc;
         this.cars.sort(compare);
+    },
+    on_mouse_over: function(id){
+        this.active_id = id;
+    }
+  },
+  computed:{
+      active_car: function() {
+          var active_id = this.active_id;
+          return this.cars.find(function(car){
+              return car.id === active_id;
+          }
+        )
     }
   },
   template:
   `
+  <div class="row">
+
   <table class="table table-striped table-hover">
         <thead>
          <tr>
@@ -106,10 +121,18 @@ Vue.component('cars-table', {
          <car-row
             v-for="car in cars"
             v-bind:car="car"
+            v-on:mouse_over="on_mouse_over"
             v-bind:key="car.id">
          </car-row>
         </tbody>
   </table>
+  <ul class="list-unstyled">
+    <car-item
+        v-if="active_id"
+        v-bind:car="active_car"
+        ></car-item>
+  </ul>
+ </div>
   `
 })
 
@@ -117,20 +140,22 @@ Vue.component('sort-icon', {
    props: ['column', 'ordered', 'asc'],
    template: `
     <span v-if="column === ordered">
-        <span v-if="asc">
+        <span id="asc" v-if="asc">
             <i class="fas fa-angle-down"></i>
         </span>
-        <span v-else>
+        <span id="desc" v-else>
             <i class="fas fa-angle-up"></i>
         </span>
     </span>
    `
 })
 
+// @mouseout="$emit('mouseOut(car.id)')
+
 Vue.component('car-row', {
     props: ['car'],
     template: `
-         <tr>
+         <tr @mouseover="$emit('mouse_over', car.id)">
             <td>{{ car.title }}</td>
             <td>{{ car.km }}</td>
             <td>{{ car.year }}</td>
