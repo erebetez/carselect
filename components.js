@@ -51,7 +51,7 @@ Vue.component('cars-table', {
     return {
         ordered: false,
         asc: false,
-        active_id: false
+        active_car: false
     }
   },
   methods: {
@@ -68,14 +68,8 @@ Vue.component('cars-table', {
         this.cars.sort(compare);
     },
     on_mouse_over: function(id){
-        this.active_id = id;
-    }
-  },
-  computed:{
-      active_car: function() {
-          var active_id = this.active_id;
-          return this.cars.find(function(car){
-              return car.id === active_id;
+          this.active_car = this.cars.find(function(car){
+              return car.id === id;
           }
         )
     }
@@ -128,7 +122,7 @@ Vue.component('cars-table', {
   </table>
   <ul class="list-unstyled">
     <car-item
-        v-if="active_id"
+        v-if="active_car"
         v-bind:car="active_car"
         ></car-item>
   </ul>
@@ -149,8 +143,6 @@ Vue.component('sort-icon', {
     </span>
    `
 })
-
-// @mouseout="$emit('mouseOut(car.id)')
 
 Vue.component('car-row', {
     props: ['car'],

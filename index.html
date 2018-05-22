@@ -12,8 +12,6 @@
 
 <div id="app" class="container">
   <h1><i class="fas fa-car"></i> Autos</h1>
-  <p>{{ message }}</p>
-  <p>{{ retr }}</p>
   <div>
     <cars-table 
         v-bind:cars="cars"
@@ -28,6 +26,8 @@
         </car-item>
     </ul>
   </div>
+  <p>{{ message }}</p>
+  <p>{{ retr }}</p>
 </div>
 <script>
 
