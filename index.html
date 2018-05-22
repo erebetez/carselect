@@ -12,7 +12,8 @@
 
 <div id="app" class="container">
   <h1><i class="fas fa-car"></i> Autos</h1>
-
+  <p>{{ message }}</p>
+  <p>{{ retr }}</p>
   <div>
     <cars-table 
         v-bind:cars="cars"
@@ -27,14 +28,13 @@
     </ul>
   </div>
 </div>
-
-
-
 <script>
 
 var app = new Vue({
   el: '#app',
   data: {
+    message: "Loading!",
+    retr: "Loading!",
     cars: []
   },
   methods: {
@@ -43,9 +43,25 @@ var app = new Vue({
         response = await fetch(myRequest)
         response = await response.json();
         this.cars = response;
-        }
+    },
+    fetch_world: async function () {
+        var myRequest = new Request('http://localhost/eti/auto/api');
+        response = await fetch(myRequest)
+        response = await response.json();
+        this.message = response;
+    },
+    save: async function () {
+        var myRequest = new Request('http://localhost/eti/auto/api/save');
+        response = await fetch(myRequest)
+        response = await response.json();
+        this.retr = response;
+    }
   },
-  created: function () { this.fetch_cars() }
+  created: function () {
+    this.fetch_cars();
+    this.fetch_world();
+    this.save();
+  }
 })
 
 </script>
