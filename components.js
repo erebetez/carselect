@@ -65,14 +65,6 @@ Vue.component('cars-table', {
         this.ordered = key;
         this.asc = !this.asc;
         this.cars.sort(compare);
-    },
-    seen: function(key) {
-        return key == this.ordered
-    }
-  },
-  computed: {
-    icon: function() {
-        return this.asc ? "fas fa-angle-down" : "fas fa-angle-up"
     }
   },
   template:
@@ -80,10 +72,34 @@ Vue.component('cars-table', {
   <table class="table table-striped table-hover">
         <thead>
          <tr>
-            <th v-on:click="order_by('title')"><i v-if="seen('title')" v-bind:class="icon"></i>Title</th>
-            <th v-on:click="order_by('km')"><i v-if="seen('km')" v-bind:class="icon"></i>km</th>
-            <th v-on:click="order_by('year')"><i v-if="seen('year')" v-bind:class="icon"></i>year</th>
-            <th v-on:click="order_by('price')"><i v-if="seen('price')" v-bind:class="icon"></i>price</th>
+            <th v-on:click="order_by('title')">
+            <sort-icon
+               v-bind:column="'title'"
+               v-bind:ordered="ordered"
+               v-bind:asc="asc"></sort-icon>
+               Title
+            </th>
+            <th v-on:click="order_by('km')">
+            <sort-icon
+               v-bind:column="'km'"
+               v-bind:ordered="ordered"
+               v-bind:asc="asc"></sort-icon>
+               km
+               </th>
+            <th v-on:click="order_by('year')">
+            <sort-icon
+               v-bind:column="'year'"
+               v-bind:ordered="ordered"
+               v-bind:asc="asc">year</sort-icon>
+               year
+               </th>
+            <th v-on:click="order_by('price')">
+            <sort-icon
+               v-bind:column="'price'"
+               v-bind:ordered="ordered"
+               v-bind:asc="asc"></sort-icon>
+               price
+               </th>
          </tr>
         </thead>
         <tbody>
@@ -97,12 +113,19 @@ Vue.component('cars-table', {
   `
 })
 
-// Vue.component('column-caption',{
-//     props: ['key']
-//     template:
-//        '<th v-on:click="order_by('title')"><i v-if="seen('title')" v-bind:class="icon"></i>Title</th>'
-//     }
-// )
+Vue.component('sort-icon', {
+   props: ['column', 'ordered', 'asc'],
+   template: `
+    <span v-if="column === ordered">
+        <span v-if="asc">
+            <i class="fas fa-angle-down"></i>
+        </span>
+        <span v-else>
+            <i class="fas fa-angle-up"></i>
+        </span>
+    </span>
+   `
+})
 
 Vue.component('car-row', {
     props: ['car'],
