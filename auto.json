@@ -5,6 +5,7 @@
      "price": 21550,
      "km": 24500,
      "year": 2016,
+     "garage": "Neuchâtel",
      "img": "https://cas01.autoscout24.ch/vw-caddy-kompaktvan--minivan-2016-occasion/?394x2048/3/90/custom/204/5440204/0.jpg",
      "url": "https://www.autoscout24.ch/de/d/vw-caddy-kompaktvan--minivan-2016-occasion?allmakes=1&fuel=14&index=5&loc=3000+bern&make=82&model=843&rad=40&st=2&vehid=5440204&vehtyp=10&returnurl=%2fde%2fautos%2f-vw--caddy%3fallmakes%3d1%26fuel%3d14%26loc%3d3000+bern%26make%3d82%26model%3d843%26rad%3d40%26st%3d2%26vehtyp%3d10%26r%3d5"
    },
@@ -14,6 +15,7 @@
      "price": 30500,
      "km": 3000,
      "year": 2018,
+     "garage": "Biel",
      "img": "https://cas01.autoscout24.ch/vw-caddy-kompaktvan--minivan-2018-vorfuehrmodell/?394x2048/3/90/custom/476/5560476/0.jpg",
      "url": "https://www.autoscout24.ch/de/d/vw-caddy-kompaktvan--minivan-2018-vorfuehrmodell?allmakes=1&fuel=14&index=6&loc=3000+bern&make=82&model=843&rad=40&st=2&vehid=5560476&vehtyp=10&returnurl=%2fde%2fautos%2f-vw--caddy%3fallmakes%3d1%26fuel%3d14%26loc%3d3000+bern%26make%3d82%26model%3d843%26rad%3d40%26st%3d2%26vehtyp%3d10%26r%3d5"
    },
@@ -23,6 +25,7 @@
      "price": 12900,
      "km": 109000,
      "year": 2013,
+     "garage": "Zollikofen",
      "img": "https://cas01.autoscout24.ch/vw-caddy-kombi-2012-occasion/?394x2048/3/90/custom/733/5400733/4.jpg",
      "url": "https://www.autoscout24.ch/de/d/vw-caddy-kombi-2012-occasion?allmakes=1&index=0&loc=3000+bern&make=82&model=843&pricefrom=4000&priceto=25000&rad=40&st=2&vehid=5400733&vehtyp=10&returnurl=%2fde%2fautos%2f-vw--caddy%3fallmakes%3d1%26loc%3d3000+bern%26make%3d82%26model%3d843%26pricefrom%3d4000%26priceto%3d25000%26rad%3d40%26st%3d2%26vehtyp%3d10%26r%3d5"
    },
@@ -32,6 +35,7 @@
      "price": 17800,
      "km": 33000,
      "year": 2015,
+     "garage": "Belp",
      "img": "https://cas01.autoscout24.ch/vw-caddy-kombi-2015-occasion/?394x2048/3/90/custom/629/5722629/1.jpg",
      "url": "https://www.autoscout24.ch/de/d/vw-caddy-kombi-2015-occasion?allmakes=1&index=7&loc=3000+bern&make=82&model=843&pricefrom=4000&priceto=25000&rad=40&st=2&vehid=5722629&vehtyp=10&returnurl=%2fde%2fautos%2f-vw--caddy%3fallmakes%3d1%26loc%3d3000+bern%26make%3d82%26model%3d843%26pricefrom%3d4000%26priceto%3d25000%26rad%3d40%26st%3d2%26vehtyp%3d10%26r%3d5"
    },
@@ -41,6 +45,7 @@
      "price": 16900,
      "km": 99909,
      "year": 2015,
+     "garage": "Hagneck",
      "img": "https://cas01.autoscout24.ch/vw-caddy-kompaktvan--minivan-2015-occasion/?1024x2048/3/90/custom/821/5734821/2.jpg",
      "url": "https://www.autoscout24.ch/de/d/vw-caddy-kompaktvan--minivan-2015-occasion?allmakes=1&index=18&loc=3000+bern&make=82&model=843&pricefrom=4000&priceto=25000&rad=40&st=2&vehid=5734821&vehtyp=10&returnurl=%2fde%2fautos%2f-vw--caddy%3fallmakes%3d1%26loc%3d3000+bern%26make%3d82%26model%3d843%26pricefrom%3d4000%26priceto%3d25000%26rad%3d40%26st%3d2%26vehtyp%3d10%26r%3d5"
    },
@@ -50,7 +55,18 @@
      "price": 20990,
      "km": 114900,
      "year": 2014,
+     "garage": "Dürrenroth",
      "img": "https://cas01.autoscout24.ch/vw-caddy-kombi-2014-occasion/?394x2048/3/90/custom/498/5707498/1.jpg",
      "url": "https://www.autoscout24.ch/de/d/vw-caddy-kombi-2014-occasion?allmakes=1&index=24&loc=3000+bern&make=82&model=843&page=2&pricefrom=4000&priceto=25000&rad=40&st=2&vehid=5707498&vehtyp=10&returnurl=%2fde%2fautos%2f-vw--caddy%3fallmakes%3d1%26loc%3d3000+bern%26make%3d82%26model%3d843%26page%3d2%26pricefrom%3d4000%26priceto%3d25000%26rad%3d40%26st%3d2%26vehtyp%3d10%26r%3d5"
+   },
+   {
+     "id": 6,
+     "title": "VW Caddy 2.0 TDI Comfortline DSG",
+     "price": 19500,
+     "km": 55000,
+     "year": 2015,
+     "garage": "Faoug",
+     "img": "https://cas01.autoscout24.ch/vw-caddy-kompaktvan--minivan-2015-occasion/?394x2048/3/90/custom/224/5673224/8.jpg",
+     "url": "https://www.autoscout24.ch/de/d/vw-caddy-kompaktvan--minivan-2015-occasion?allmakes=1&index=0&loc=3000+bern&make=82&model=843&pricefrom=4000&priceto=25000&rad=40&st=2&vehid=5673224&vehtyp=10&returnurl=%2fde%2fautos%2f-vw--caddy%3fallmakes%3d1%26loc%3d3000+bern%26make%3d82%26model%3d843%26pricefrom%3d4000%26priceto%3d25000%26rad%3d40%26st%3d2%26vehtyp%3d10%26r%3d5"
    }
 ]

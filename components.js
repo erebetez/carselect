@@ -16,6 +16,8 @@ Vue.component('car-item', {
         <dd>{{ car.km }}</dd>
         <dt>year</dt>
         <dd>{{ car.year }}</dd>
+        <dt>garage</dt>
+        <dd>{{ car.garage }}</dd>
         <dt>price</dt>
         <dd>{{ car.price }}</dd>
        </dl>
@@ -109,6 +111,7 @@ Vue.component('cars-table', {
                v-bind:asc="asc"></sort-icon>
                price
                </th>
+            <th></th>
          </tr>
         </thead>
         <tbody>
@@ -147,11 +150,12 @@ Vue.component('sort-icon', {
 Vue.component('car-row', {
     props: ['car'],
     template: `
-         <tr @mouseover="$emit('mouse_over', car.id)">
+         <tr>
             <td>{{ car.title }}</td>
             <td>{{ car.km }}</td>
             <td>{{ car.year }}</td>
             <td>{{ car.price }}</td>
+            <td @mouseover="$emit('mouse_over', car.id)"><i class="fas fa-eye"></i></td>
         </tr>
         `
 })
